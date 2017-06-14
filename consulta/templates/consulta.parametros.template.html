@@ -1,0 +1,494 @@
+{% extends 'base.template.html' %}
+{% load static from staticfiles %}
+{% load i18n %}
+{% block contenido %}
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Consulta por Parámetros</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <form action="" role="form" class="form form-horizontal validate-form" method="post" autocomplete="off">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_spmid">
+                                SPMID
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="spmid_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="spmid_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_ra">
+                                RA
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="ra_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="ra_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_dec">
+                                DEC
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="dec_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="dec_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_era">
+                                ERA
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="era_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="era_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_edec">
+                                EDEC
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="edec_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="edec_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_pma">
+                                PMA
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="pma_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="pma_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_pmd">
+                                PMD
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="pmd_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="pmd_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_epma">
+                                EPMA
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="epma_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="epma_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_epmd">
+                                EPMD
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="epmd_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="epmd_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_b">
+                                B
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="b_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="b_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_v">
+                                V
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="v_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="v_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_ibiv">
+                                IBIV
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="ibiv_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="ibiv_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_epav">
+                                EPAV
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="epav_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="epav_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_ep1">
+                                EP1
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="ep1_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="ep1_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_ep2">
+                                EP2
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="ep2_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="ep2_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_mp">
+                                MP
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="mp_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="mp_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_np">
+                                NP
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="np_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="np_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_nc">
+                                NC
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="nc_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="nc_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_igalicat">
+                                IGALICAT
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="igalicat_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="igalicat_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_j">
+                                J
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="j_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="j_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_h">
+                                H
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="h_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="h_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="id_k">
+                                K
+                            </label>
+                            <div class="col-md-9 col-xs-9 col-sm-9">
+                                <div class="form-inline">
+                                    <select class="form-control select" name="k_1">
+                                        <option value="">Seleccione...</option>
+                                        <option value="<"> < </option>
+                                        <option value="<"> <= </option>
+                                        <option value="<"> > </option>
+                                        <option value="<"> >= </option>
+                                        <option value="<"> = </option>
+                                    </select>
+                                    <input type="text" name="k_2" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-footer clearfix">
+                    <button type="submit" class="btn btn-sm btn-info btn-flat pull-right">Consultar</button>
+                </div>
+                <!-- /.box-footer -->
+            </form>
+        </div>
+        <!-- /.box-body -->
+    </div>
+{% endblock %}
