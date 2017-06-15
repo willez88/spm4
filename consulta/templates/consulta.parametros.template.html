@@ -8,7 +8,7 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-            <form action="" role="form" class="form form-horizontal validate-form" method="post" autocomplete="off">
+            <form action="{% url 'resultado_parametros' %}" role="form" class="form form-horizontal validate-form" method="post" autocomplete="off">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-md-6">
