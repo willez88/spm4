@@ -1,15 +1,42 @@
 {% extends 'base.template.html' %}
 {% load static from staticfiles %}
 {% load i18n %}
+{% block content_header_title %}{% trans 'Consulta' %}{% endblock %}
 {% block contenido %}
     <div class="box box-info">
         <div class="box-header with-border">
-            <h3 class="box-title">Consulta por Parámetros</h3>
+            <h3 class="box-title">Por Parámetros</h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-            <form action="{% url 'resultado_parametros' %}" role="form" class="form form-horizontal validate-form" method="post" autocomplete="off">
+            <form role="form" class="form form-horizontal validate-form" method="post" autocomplete="off">
                 {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.spmid.auto_id }}">
+                              {{ form.spmid.label }}
+                            </label>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.spmid_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.spmid }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.spmid_ra }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
