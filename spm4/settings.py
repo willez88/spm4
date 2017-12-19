@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 from mongoengine import connect
-db_name = 'Ejemplo'
+#db_name = 'Ejemplo'
+db_name = 'SPM4'
 #connect(MONGO_DATABASE_NAME)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)

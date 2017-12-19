@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic.edit import FormView
+from django.views.generic import TemplateView
 from .forms import ParametroForm
-from .models import Persona, Persona2
+from .models import Persona, Estrella
 from mongoengine.queryset.visitor import Q
 
 # Create your views here.
@@ -30,8 +31,58 @@ def resultado_parametros(request):
 class ParametroView(FormView):
     template_name = 'consulta.parametros.template.html'
     form_class = ParametroForm
-    success_url = reverse_lazy('resultado_parametros')
+    #success_url = reverse_lazy('resultado')
+
+    def form_valid(self, form):
+        operador = form.cleaned_data['spmid_operador']
+        spmid = form.cleaned_data['spmid']
+        spmid_ra = form.cleaned_data['spmid_ra']
+        return render(self.request, 'consulta.resultado.html', {'spmid':spmid,'operador':operador,'spmid_ra':spmid_ra})
+        #return super(ParametroView, self).form_valid(form)
 
     def form_invalid(self, form):
         print(form.errors)
         return super(ParametroView, self).form_invalid(form)
+
+class ResultadoView(TemplateView):
+    template_name = 'consulta.resultado.html'
+
+class DatosPruebaView(TemplateView):
+    template_name = 'consulta.datos.prueba.html'
+    def get_context_data(self, **kwargs):
+        context = super(DatosPruebaView, self).get_context_data(**kwargs)
+        c = 0
+        archivo = open('/media/william/565C935D5C933729/Documents and Settings/William/Downloads/Ubuntu/rs.asc', 'r')
+        for linea in archivo:
+            lista = linea.split(' ')
+            estrella = Estrella()
+            estrella.ra = float(lista[0])
+            estrella.dec = float(lista[1])
+            estrella.era = float(lista[2])
+            estrella.edec = float(lista[3])
+            estrella.pma = float(lista[4])
+            estrella.pmd = float(lista[5])
+            estrella.epma = float(lista[6])
+            estrella.empd = float(lista[7])
+            estrella.b = float(lista[8])
+            estrella.v = float(lista[9])
+            estrella.ibiv = int(lista[10])
+            estrella.epav = float(lista[11])
+            estrella.ep1 = float(lista[12])
+            estrella.ep2 = float(lista[13])
+            estrella.mp = int(lista[14])
+            estrella.np = int(lista[15])
+            estrella.nc = int(lista[16])
+            estrella.spmid = lista[17]
+            estrella.igalicat = int(lista[18])
+            estrella.j = float(lista[19])
+            estrella.h = float(lista[20])
+            estrella.k = float(lista[21])
+            estrella.save()
+
+            if c == 5000:
+                break
+            c = c+1
+            #break
+        context['listo'] = "lista"
+        return context
