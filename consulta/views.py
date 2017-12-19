@@ -12,8 +12,6 @@ def parametros(request):
     #persona2 = Persona2(nombre="William",apellido="Páez",cedula="19102678",edad=28)
     #persona2.save()
 
-    #persona2= Persona2.objects
-    #print(persona2)
     #for p in Persona.objects.filter( Q(edad__gt=25) | Q(edad__lt=28) ):
     #    print(p.nombre)
 
