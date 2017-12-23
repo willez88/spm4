@@ -31,542 +31,540 @@
                                 &nbsp;
                             </div>
                             <div class="col-md-6 col-xs-6 col-sm-6">
-                                <div class="form-inline">{{ form.spmid_ra }}</div>
+                                <div class="form-inline">{{ form.operador_logico_1 }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_spmid">
-                                SPMID
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.ra.auto_id }}">
+                              {{ form.ra.label }}
                             </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="spmid_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="spmid_2" class="form-control input-sm">
-                                    <select class="form-control select" name="spmid_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_ra">
-                                RA
-                            </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="ra_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="ra_2" class="form-control input-sm">
-                                    <select class="form-control select" name="ra_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.ra_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.ra }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_dec">
-                                DEC
-                            </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="dec_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="dec_2" class="form-control input-sm">
-                                    <select class="form-control select" name="dec_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_era">
-                                ERA
-                            </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="era_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="era_2" class="form-control input-sm">
-                                    <select class="form-control select" name="era_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.operador_logico_2 }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_edec">
-                                EDEC
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.dec.auto_id }}">
+                              {{ form.dec.label }}
                             </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="edec_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="edec_2" class="form-control input-sm">
-                                    <select class="form-control select" name="edec_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_pma">
-                                PMA
-                            </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="pma_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="pma_2" class="form-control input-sm">
-                                    <select class="form-control select" name="pma_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.dec_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.dec }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_pmd">
-                                PMD
-                            </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="pmd_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="pmd_2" class="form-control input-sm">
-                                    <select class="form-control select" name="pmd_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_epma">
-                                EPMA
-                            </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="epma_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="epma_2" class="form-control input-sm">
-                                    <select class="form-control select" name="epma_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.operador_logico_3 }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_epmd">
-                                EPMD
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.era.auto_id }}">
+                              {{ form.era.label }}
                             </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="epmd_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="epmd_2" class="form-control input-sm">
-                                    <select class="form-control select" name="epmd_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_b">
-                                B
-                            </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="b_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="b_2" class="form-control input-sm">
-                                    <select class="form-control select" name="b_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.era_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.era }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_v">
-                                V
-                            </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="v_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="v_2" class="form-control input-sm">
-                                    <select class="form-control select" name="v_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_ibiv">
-                                IBIV
-                            </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="ibiv_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="ibiv_2" class="form-control input-sm">
-                                    <select class="form-control select" name="ibiv_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.operador_logico_4 }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_epav">
-                                EPAV
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.edec.auto_id }}">
+                              {{ form.edec.label }}
                             </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="epav_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="epav_2" class="form-control input-sm">
-                                    <select class="form-control select" name="epav_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_ep1">
-                                EP1
-                            </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="ep1_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="ep1_2" class="form-control input-sm">
-                                    <select class="form-control select" name="ep1_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.edec_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.edec }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_ep2">
-                                EP2
-                            </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="ep2_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="ep2_2" class="form-control input-sm">
-                                    <select class="form-control select" name="ep2_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_mp">
-                                MP
-                            </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="mp_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="mp_2" class="form-control input-sm">
-                                    <select class="form-control select" name="mp_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.operador_logico_5 }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_np">
-                                NP
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.pma.auto_id }}">
+                              {{ form.pma.label }}
                             </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="np_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="np_2" class="form-control input-sm">
-                                    <select class="form-control select" name="np_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_nc">
-                                NC
-                            </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="nc_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="nc_2" class="form-control input-sm">
-                                    <select class="form-control select" name="nc_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.pma_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.pma }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_igalicat">
-                                IGALICAT
-                            </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="igalicat_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="igalicat_2" class="form-control input-sm">
-                                    <select class="form-control select" name="igalicat_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_j">
-                                J
-                            </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="j_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="j_2" class="form-control input-sm">
-                                    <select class="form-control select" name="j_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.operador_logico_6 }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_h">
-                                H
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.pmd.auto_id }}">
+                              {{ form.pmd.label }}
                             </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="h_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="h_2" class="form-control input-sm">
-                                    <select class="form-control select" name="h_3">
-                                        <option value="and"> && </option>
-                                        <option value="or"> || </option>
-                                    </select>
-                                </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.pmd_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.pmd }}</div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="form-group">
-                            <label class="col-md-1 col-xs-1 col-sm-1 control-label" for="id_k">
-                                K
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.operador_logico_7 }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.epma.auto_id }}">
+                              {{ form.epma.label }}
                             </label>
-                            <div class="col-md-11 col-xs-11 col-sm-11">
-                                <div class="form-inline">
-                                    <select class="form-control select" name="k_1">
-                                        <option value="<"> < </option>
-                                        <option value="<"> <= </option>
-                                        <option value="<"> > </option>
-                                        <option value="<"> >= </option>
-                                        <option value="<"> = </option>
-                                    </select>
-                                    <input type="text" name="k_2" class="form-control input-sm">
-                                </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.epma_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.epma }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.operador_logico_8 }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.epmd.auto_id }}">
+                              {{ form.epmd.label }}
+                            </label>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.epmd_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.epmd }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.operador_logico_9 }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.b.auto_id }}">
+                              {{ form.b.label }}
+                            </label>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.b_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.b }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.operador_logico_10 }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.v.auto_id }}">
+                              {{ form.v.label }}
+                            </label>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.v_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.v }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.operador_logico_11 }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.ibiv.auto_id }}">
+                              {{ form.ibiv.label }}
+                            </label>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.ibiv_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.ibiv }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.operador_logico_12 }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.epav.auto_id }}">
+                              {{ form.epav.label }}
+                            </label>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.epav_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.epav }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.operador_logico_13 }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.ep1.auto_id }}">
+                              {{ form.ep1.label }}
+                            </label>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.ep1_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.ep1 }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.operador_logico_14 }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.ep2.auto_id }}">
+                              {{ form.ep2.label }}
+                            </label>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.ep2_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.ep2 }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.operador_logico_15 }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.mp.auto_id }}">
+                              {{ form.mp.label }}
+                            </label>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.mp_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.pm }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.operador_logico_16 }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.np.auto_id }}">
+                              {{ form.np.label }}
+                            </label>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.np_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.np }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.operador_logico_17 }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.nc.auto_id }}">
+                              {{ form.nc.label }}
+                            </label>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.nc_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.nc }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.operador_logico_18 }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.igalicat.auto_id }}">
+                              {{ form.igalicat.label }}
+                            </label>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.igalicat_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.igalicat }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.operador_logico_19 }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.j.auto_id }}">
+                              {{ form.j.label }}
+                            </label>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.j_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.j }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.operador_logico_20 }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.h.auto_id }}">
+                              {{ form.h.label }}
+                            </label>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.h_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.h }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                &nbsp;
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.operador_logico_21 }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.k.auto_id }}">
+                              {{ form.k.label }}
+                            </label>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.k_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.k }}</div>
                             </div>
                         </div>
                     </div>

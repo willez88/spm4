@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views.generic.edit import FormView
 from django.views.generic import TemplateView
 from .forms import ParametroForm
@@ -33,10 +33,38 @@ class ParametroView(FormView):
     #success_url = reverse_lazy('resultado')
 
     def form_valid(self, form):
-        operador = form.cleaned_data['spmid_operador']
+        spmid_operador = form.cleaned_data['spmid_operador']
         spmid = form.cleaned_data['spmid']
-        spmid_ra = form.cleaned_data['spmid_ra']
-        return render(self.request, 'consulta.resultado.html', {'spmid':spmid,'operador':operador,'spmid_ra':spmid_ra})
+        operador_logico_1 = form.cleaned_data['operador_logico_1']
+
+        if spmid != '' and ra != '':
+            print("Si or o and")
+
+        if spmid == '':
+            print("No or o and")
+        if ra == '':
+            print("")
+
+
+
+        c = 0
+        for fo in form.cleaned_data:
+            if form.cleaned_data[fo] == 'and':
+                c = c + 1
+
+        print(c)
+
+        prueba = {'ra': {'$lt':0}}
+        print(prueba)
+        estrella = Estrella.objects.filter(
+            __raw__= prueba
+                #'ra': {'$lt': 30},
+                #'dec': {'$lt': 30},
+                #'$or': [{'b': {'$lt': 30}}, {'v': {"$lt": 30}}]
+        )
+
+        print(estrella)
+        return render(self.request, 'consulta.resultado.html', {'spmid':spmid,'spmid_operador':spmid_operador})
         #return super(ParametroView, self).form_valid(form)
 
     def form_invalid(self, form):

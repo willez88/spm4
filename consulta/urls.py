@@ -8,5 +8,5 @@ urlpatterns = [
     url(r'^resultado-parametros/$', views.resultado_parametros, name='resultado_parametros'),
     url(r'^parametros2/$', ParametroView.as_view(), name='parametros2'),
     url(r'^resultado/$', ResultadoView.as_view(), name='resultado'),
-    url(r'^datos-prueba/$', DatosPruebaView.as_view(), name='datos_prueba'),
+    #url(r'^datos-prueba/$', DatosPruebaView.as_view(), name='datos_prueba'),
 ]
