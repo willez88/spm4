@@ -529,8 +529,7 @@ class CargarDatosView(TemplateView):
         cadena = ''
         cadena2 = ''
         c = 0
-        estrella = Estrella()
-        archivo = open('/media/william/565C935D5C933729/Documents and Settings/William/Downloads/Ubuntu/rs.asc', 'r')
+        archivo = open('/home/william/MongoDB-Proyecto/Catalogo-SPM4/rs.asc', 'r')
         for linea in archivo:
             lista = linea.split(' ')
             if len(lista) == 21:
@@ -538,11 +537,12 @@ class CargarDatosView(TemplateView):
                 cadena = cadena + lista[14][len(lista[14])-1]
                 for i in range(0, len(lista[14])-2):
                     cadena2 = cadena2 + lista[14][i]
-                print(lista)
-                print(cadena)
-                print(cadena2)
-                break
-                """estrella.ra = float(lista[0])
+                #print(lista)
+                #print(cadena)
+                #print(cadena2)
+                #break
+                estrella = Estrella()
+                estrella.ra = float(lista[0])
                 estrella.dec = float(lista[1])
                 estrella.era = float(lista[2])
                 estrella.edec = float(lista[3])
@@ -564,9 +564,10 @@ class CargarDatosView(TemplateView):
                 estrella.j = float(lista[19])
                 estrella.h = float(lista[20])
                 estrella.k = float(lista[21])
-                estrella.save()"""
+                estrella.save()
 
             elif len(lista) == 22:
+                estrella = Estrella()
                 estrella.ra = float(lista[0])
                 estrella.dec = float(lista[1])
                 estrella.era = float(lista[2])
@@ -589,7 +590,7 @@ class CargarDatosView(TemplateView):
                 estrella.j = float(lista[19])
                 estrella.h = float(lista[20])
                 estrella.k = float(lista[21])
-                #estrella.save()
+                estrella.save()
 
             """if c == 100000:
                 break
