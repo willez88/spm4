@@ -1,5 +1,5 @@
 {% extends 'base.template.html' %}
-{% load static from staticfiles %}
+{% load static %}
 {% load i18n %}
 {% block contenido %}
     <div class="box box-info">
@@ -38,28 +38,32 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <td>12345</td>
-                            <td>sdfsdf</td>
-                            <td>1234567890</td>
-                            <td>1234567890</td>
-                            <td>1234567890</td>
-                            <td>1234567890</td>
-                            <td>1234567890</td>
-                            <td>1234567890</td>
-                            <td>1234567890</td>
-                            <td>1234567890</td>
-                            <td>1234567890</td>
-                            <td>1234567890</td>
-                            <td>1234567890</td>
-                            <td>1234567890</td>
-                            <td>1234567890</td>
-                            <td>1234567890</td>
-                            <td>1234567890</td>
-                            <td>1234567890</td>
-                            <td>1234567890</td>
-                            <td>1234567890</td>
-                            <td>1234567890</td>
-                            <td>1234567890</td>
+                          {% for sp in spm4 %}
+                            <tr>
+                              <td>{{ sp.spmid }}</td>
+                              <td>{{ sp.ra }}</td>
+                              <td>{{ sp.dec }}</td>
+                              <td>{{ sp.era }}</td>
+                              <td>{{ sp.edec }}</td>
+                              <td>{{ sp.pma }}</td>
+                              <td>{{ sp.pmd }}</td>
+                              <td>{{ sp.epma }}</td>
+                              <td>{{ sp.epmd }}</td>
+                              <td>{{ sp.b }}</td>
+                              <td>{{ sp.v }}</td>
+                              <td>{{ sp.ibiv }}</td>
+                              <td>{{ sp.epav }}</td>
+                              <td>{{ sp.ep1 }}</td>
+                              <td>{{ sp.ep2 }}</td>
+                              <td>{{ sp.mp }}</td>
+                              <td>{{ sp.np }}</td>
+                              <td>{{ sp.nc }}</td>
+                              <td>{{ sp.igalicat }}</td>
+                              <td>{{ sp.j }}</td>
+                              <td>{{ sp.h }}</td>
+                              <td>{{ sp.k }}</td>
+                            </tr>
+                          {% endfor %}
                         </tbody>
                     </table>
                 </div>
@@ -72,7 +76,7 @@
         $(document).ready(function() {
             var tabla= $('#tabla').DataTable({
                 "language": {
-                    "sProcessing":     "Procesando...",
+                  "sProcessing":     "Procesando...",
 	                "sLengthMenu":     "Mostrar _MENU_ registros",
 	                "sZeroRecords":    "No se encontraron resultados",
 	                "sEmptyTable":     "Ningún dato disponible en esta tabla",
@@ -94,26 +98,15 @@
 		                "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
 		                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
 	                },
+                  "decimal": ".",
                 },
-                /*dom: 'Bfrtip',
-                buttons: [
-                    {
-                        extend: 'copyHtml5',
-                    },
-                    {
-                        extend: 'csvHtml5',
-                        fieldBoundary: '',
-                    },
-                    {
-                        extend: 'excelHtml5',
-                    },
-                    {
-                        extend: 'pdfHtml5',
-                    }
-                ]*/
+                //"info": false,
+                "paging": false,
+                "ordering": false,
+                "searching": false,
             });
 
-            new $.fn.dataTable.Buttons(tabla, {
+            /*new $.fn.dataTable.Buttons(tabla, {
             buttons: [
                 {
                     extend: 'copyHtml5',
@@ -133,7 +126,7 @@
                 },
               ],
             });
-            tabla.buttons().container().appendTo(tabla.table().container());
+            tabla.buttons().container().appendTo(tabla.table().container());*/
         });
     </script>
 {% endblock %}

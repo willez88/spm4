@@ -12,9 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 from mongoengine import connect
-#db_name = 'Ejemplo'
 db_name = 'SPM4'
-#connect(MONGO_DATABASE_NAME)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -29,7 +27,7 @@ SECRET_KEY = '-x9ecgu*v)csrl4a29!q)f3p*4rgu)87s2a!p@(^w4^$%)a7h*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

@@ -1,7 +1,9 @@
 {% extends 'base.template.html' %}
-{% load static from staticfiles %}
 {% load i18n %}
 {% block content_header_title %}{% trans 'Consulta' %}{% endblock %}
+{% block content_header_roadmap %}
+    <li class="active">{% trans 'Por Parámetros' %}</li>
+{% endblock %}
 {% block contenido %}
     <div class="box box-info">
         <div class="box-header with-border">
@@ -9,6 +11,8 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
+          <p>La visualización en HTML está truncado a 5000 registro debido a que el navegador se pone lento cuando renderiza la tabla.</p>
+          <p>La visualización en CSV y JSON muestra todos los registro según los filtros que se elijan. La descarga del archivo puede tardar dependiendo de la cantidad.</p>
             <form role="form" class="form form-horizontal validate-form" method="post" autocomplete="off">
                 {% csrf_token %}
                 <div class="row">
@@ -408,7 +412,7 @@
                               {{ form.mp.label }}
                             </label>
                             <div class="col-md-6 col-xs-6 col-sm-6">
-                                <div class="form-inline">{{ form.mp_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.pm }}</div>
+                                <div class="form-inline">{{ form.mp_operador }} &nbsp;&nbsp;&nbsp;&nbsp; {{ form.mp }}</div>
                             </div>
                         </div>
                     </div>
@@ -570,6 +574,19 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-md-6 col-sm-6 col-xs-6 control-label" for="{{ form.opcion.auto_id }}">
+                              {{ form.opcion.label }}
+                            </label>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div class="form-inline">{{ form.opcion }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="box-footer clearfix">
                     <button type="submit" class="btn btn-sm btn-info btn-flat pull-right">Consultar</button>
                 </div>
@@ -578,4 +595,32 @@
         </div>
         <!-- /.box-body -->
     </div>
+{% endblock %}
+{% block extra_footer %}
+  <script>
+    $(document).ready(function() {
+      $("#id_spmid_operador").val(">=").change();
+      $("#id_ra_operador").val(">=").change();
+      $("#id_dec_operador").val(">=").change();
+      $("#id_era_operador").val(">=").change();
+      $("#id_edec_operador").val(">=").change();
+      $("#id_pma_operador").val(">=").change();
+      $("#id_pmd_operador").val(">=").change();
+      $("#id_epma_operador").val(">=").change();
+      $("#id_epmd_operador").val(">=").change();
+      $("#id_b_operador").val(">=").change();
+      $("#id_v_operador").val(">=").change();
+      $("#id_ibiv_operador").val(">=").change();
+      $("#id_epav_operador").val(">=").change();
+      $("#id_ep1_operador").val(">=").change();
+      $("#id_ep2_operador").val(">=").change();
+      $("#id_mp_operador").val(">=").change();
+      $("#id_np_operador").val(">=").change();
+      $("#id_nc_operador").val(">=").change();
+      $("#id_igalicat_operador").val(">=").change();
+      $("#id_j_operador").val(">=").change();
+      $("#id_h_operador").val(">=").change();
+      $("#id_k_operador").val(">=").change();
+    });
+  </script>
 {% endblock %}

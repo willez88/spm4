@@ -4,14 +4,14 @@ from spm4.settings import db_name
 # Create your models here.
 connect(db_name)
 
-class Persona(Document):
+"""class Persona(Document):
     _id = ObjectIdField()
     nombres = StringField(max_length=100)
     apellido = StringField(max_length=100)
-    edad = IntField()
+    edad = IntField()"""
 
 class Estrella(Document):
-    spmid = StringField(max_length=20)
+    spmid = StringField(max_length=20,unique=True)
     ra = FloatField()
     dec = FloatField()
     era = FloatField()
@@ -33,3 +33,10 @@ class Estrella(Document):
     j = FloatField()
     h = FloatField()
     k = FloatField()
+
+    meta = {
+        'indexes':[
+            'ra','dec','era','edec','pma','pmd','epma','epmd','b','v',
+            'ibiv','epav','ep1','ep2','mp','np','nc','igalicat','j','h','k',
+        ]
+    }

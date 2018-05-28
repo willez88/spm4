@@ -1,6 +1,6 @@
 from django import forms
 from django.utils.translation import ugettext_lazy as _
-from base.constant import OPERADOR_UNO, OPERADOR_DOS
+from base.constant import OPCION, OPERADOR_UNO, OPERADOR_DOS
 
 class ParametroForm(forms.Form):
 
@@ -9,10 +9,10 @@ class ParametroForm(forms.Form):
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     spmid = forms.CharField(
@@ -21,9 +21,9 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor spmid"),
+                'title': _("Indique el valor spmid"), 'value': '0010000001',
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_1 = forms.ChoiceField(
@@ -31,20 +31,20 @@ class ParametroForm(forms.Form):
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     ra_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     ra = forms.CharField(
@@ -52,29 +52,29 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor RA"), 'step': 'any',
+                'title': _("Indique el valor RA"), 'step': 'any', 'value': '0.0000302',
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_2 = forms.ChoiceField(
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     dec_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     dec = forms.CharField(
@@ -82,29 +82,29 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor DEC"), 'step': 'any',
+                'title': _("Indique el valor DEC"), 'step': 'any', 'value': '-89.9887208',
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_3 = forms.ChoiceField(
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     era_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     era = forms.CharField(
@@ -112,29 +112,29 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor ERA"), 'step': 'any',
+                'title': _("Indique el valor ERA"), 'step': 'any', 'value': '0',
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_4 = forms.ChoiceField(
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     edec_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     edec = forms.CharField(
@@ -142,29 +142,29 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor EDEC"), 'step': 'any',
+                'title': _("Indique el valor EDEC"), 'step': 'any', 'value': '0.1',
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_5 = forms.ChoiceField(
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     pma_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     pma = forms.CharField(
@@ -172,29 +172,29 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor PMA"), 'step': 'any',
+                'title': _("Indique el valor PMA"), 'step': 'any', 'value': '-9990.75'
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_6 = forms.ChoiceField(
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     pmd_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     pmd = forms.CharField(
@@ -202,29 +202,29 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor PMD"), 'step': 'any',
+                'title': _("Indique el valor PMD"), 'step': 'any', 'value': '-9980.70',
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_7 = forms.ChoiceField(
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     epma_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     epma = forms.CharField(
@@ -232,29 +232,29 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor EPMA"), 'step': 'any',
+                'title': _("Indique el valor EPMA"), 'step': 'any', 'value': '0.37',
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_8 = forms.ChoiceField(
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     epmd_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     epmd = forms.CharField(
@@ -262,29 +262,29 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor EPMD"), 'step': 'any',
+                'title': _("Indique el valor EPMD"), 'step': 'any', 'value': '0.24',
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_9 = forms.ChoiceField(
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     b_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     b = forms.CharField(
@@ -292,29 +292,29 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor B"), 'step': 'any',
+                'title': _("Indique el valor B"), 'step': 'any', 'value': '0',
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_10 = forms.ChoiceField(
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     v_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     v = forms.CharField(
@@ -322,29 +322,29 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor V"), 'step': 'any',
+                'title': _("Indique el valor V"), 'step': 'any', 'value': '0',
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_11 = forms.ChoiceField(
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     ibiv_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     ibiv = forms.CharField(
@@ -352,29 +352,29 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor IBIV"),
+                'title': _("Indique el valor IBIV"), 'value': '1',
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_12 = forms.ChoiceField(
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     epav_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     epav = forms.CharField(
@@ -382,29 +382,29 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor EPAV"), 'step': 'any',
+                'title': _("Indique el valor EPAV"), 'step': 'any', 'value': '15.72',
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_13 = forms.ChoiceField(
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     ep1_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     ep1 = forms.CharField(
@@ -412,29 +412,29 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor EP1"), 'step': 'any',
+                'title': _("Indique el valor EP1"), 'step': 'any', 'value': '15.50',
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_14 = forms.ChoiceField(
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     ep2_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     ep2 = forms.CharField(
@@ -442,29 +442,29 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor EP2"), 'step': 'any',
+                'title': _("Indique el valor EP2"), 'step': 'any', 'value': '37.58',
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_15 = forms.ChoiceField(
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     mp_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     mp = forms.CharField(
@@ -472,29 +472,29 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor MP"),
+                'title': _("Indique el valor MP"), 'value': '1',
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_16 = forms.ChoiceField(
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     np_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     np = forms.CharField(
@@ -502,29 +502,29 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor NP"),
+                'title': _("Indique el valor NP"), 'value': '0',
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_17 = forms.ChoiceField(
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     nc_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     nc = forms.CharField(
@@ -532,29 +532,29 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor NC"),
+                'title': _("Indique el valor NC"), 'value': '0',
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_18 = forms.ChoiceField(
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     igalicat_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     igalicat = forms.CharField(
@@ -562,29 +562,29 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor IGALICAT"),
+                'title': _("Indique el valor IGALICAT"), 'value': '0',
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_19 = forms.ChoiceField(
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     j_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"), 'step': 'any',
             }
-        ), required= False
+        ), #required= False
     )
 
     j = forms.CharField(
@@ -592,29 +592,29 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor J"),
+                'title': _("Indique el valor J"), 'step': 'any', 'value': '-2.652',
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_20 = forms.ChoiceField(
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     h_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     h = forms.CharField(
@@ -622,29 +622,29 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor H"), 'step': 'any',
+                'title': _("Indique el valor H"), 'step': 'any', 'value': '-3.732',
             }
-        ), required = False
+        ), #required = False
     )
 
     operador_logico_21 = forms.ChoiceField(
         choices= OPERADOR_DOS,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     k_operador = forms.ChoiceField(
         choices= OPERADOR_UNO,
         widget=forms.Select(
             attrs={
-                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:50px;',
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:60px;',
                 'title': _("Seleccione el Operador"),
             }
-        ), required= False
+        ), #required= False
     )
 
     k = forms.CharField(
@@ -652,7 +652,50 @@ class ParametroForm(forms.Form):
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
-                'title': _("Indique el valor K"), 'step': 'any',
+                'title': _("Indique el valor K"), 'step': 'any', 'value': '-4.227',
             }
-        ), required = False
+        ), #required = False
+    )
+
+    opcion = forms.ChoiceField(
+        label= _("Visualización"),
+        choices= OPCION,
+        widget=forms.Select(
+            attrs={
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:250px;',
+                'title': _("Seleccione la opción para ver los resultados"),
+            }
+        ),
+    )
+
+class RectanguloForm(forms.Form):
+
+    ra = forms.CharField(
+        label=_("RA"),
+        widget=forms.NumberInput(
+            attrs={
+                'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
+                'title': _("Indique el valor de ra"), 'step': 'any',
+            }
+        ),
+    )
+
+    dec = forms.CharField(
+        label=_("DEC"),
+        widget=forms.NumberInput(
+            attrs={
+                'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
+                'title': _("Indique el valor de dec"), 'step': 'any',
+            }
+        ),
+    )
+
+    tamaho_rectangulo = forms.CharField(
+        label=_("Tamaño del Rectángulo"),
+        widget=forms.NumberInput(
+            attrs={
+                'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
+                'title': _("Indique el valor del tamaño del rectángulo"), 'step': 'any',
+            }
+        ),
     )
