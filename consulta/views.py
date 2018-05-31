@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.views.generic.edit import FormView
 from django.views.generic import TemplateView
-from .forms import ParametroForm, RectanguloForm
+from .forms import ParametroForm, RectangularForm
 from .models import Estrella
 import json
 from django.http import HttpResponse
@@ -11,7 +11,7 @@ import csv
 # Create your views here.
 
 class ParametroView(FormView):
-    template_name = 'consulta.parametro.template.html'
+    template_name = 'consulta.parametro.html'
     form_class = ParametroForm
     #success_url = reverse_lazy('resultado')
 
@@ -460,47 +460,27 @@ class ParametroView(FormView):
             lista_or.append(d22)
 
         total = {}
-        #print(lista_and)
-        #print(lista_or)
         op1 = {'$and': lista_and}
         op2 = {'$or': lista_or}
-        print(op1)
-        print(op2)
+        #print(op1)
+        #print(op2)
         if len(lista_or)==0:
             total = op1
-            #print('and')
         elif len(lista_and)==0:
             total = op2
-            #print('or')
         elif len(lista_and)>0 and len(lista_or)>0:
-            op10.update(op2)
+            op1.update(op2)
             total = op1
-            #print('hola')
 
         estrella = Estrella.objects.filter(
             __raw__= total
         )
-        print(estrella.count())
 
-        """temp = []
-        c = 0
-        for es in estrella:
-            lista = []
-            lista.append(es.spmid)
-            lista.append(es.ra)
-            lista.append(es.dec)
-            lista.append(es.era)
-            temp.append(lista)
-            if c == 10:
-                break
-            c = c + 1
-        d = {'data': temp}
-        print(d)"""
         if form.cleaned_data['opcion'] == '1':
-            return render(self.request, 'consulta.parametro.resultado.html', {'spm4': estrella.limit(5000)})
+            return render(self.request, 'consulta.resultado.html', {'estrella': estrella.limit(5000),'p':'p'})
         elif form.cleaned_data['opcion'] == '2':
             response = HttpResponse(content_type='text/csv')
-            response['Content-Disposition'] = 'attachment; filename="resultado.csv"'
+            response['Content-Disposition'] = 'attachment; filename="parametro.csv"'
             writer = csv.writer(response,delimiter=';')
             writer.writerow(['spmid', 'ra', 'dec', 'era','edec','pma','pmd','epma','epmd','b','v','ibiv','epav','ep1','ep2','mp','np','nc','igalicat','j','h','k'])
             for es in estrella:
@@ -509,14 +489,12 @@ class ParametroView(FormView):
         elif form.cleaned_data['opcion'] == '3':
             lista = []
             for es in estrella:
-                #lista = []
                 lista.append({'spmid':es.spmid,'ra':es.ra,'era':es.era,'edec':es.edec,'pma':es.pma,'pmd':es.pmd,'epma':es.epma,'epmd':es.epmd,'b':es.b,'v':es.v,'ibiv':es.ibiv,
                     'epav':es.epav,'ep1':es.ep1,'ep2':es.ep2,'mp':es.mp,'np':es.np,'nc':es.nc,'igalicat':es.igalicat,'j':es.j,'h':es.h,'k':es.k
                 })
             response = HttpResponse(json.dumps(lista), content_type='application/force-download')
-            response['Content-Disposition'] = 'attachment; filename="resultado.json"'
+            response['Content-Disposition'] = 'attachment; filename="parametro.json"'
             return response
-            #return HttpResponse(json.dumps(lista), content_type='application/force-download')
 
     def form_invalid(self, form):
         print(form.errors)
@@ -529,7 +507,7 @@ class CargarDatosView(TemplateView):
         cadena = ''
         cadena2 = ''
         c = 0
-        archivo = open('/home/william/MongoDB-Proyecto/Catalogo-SPM4/rs.asc', 'r')
+        archivo = open('/media/william/565C935D5C933729/Documents and Settings/William/Downloads/Ubuntu/rs.asc', 'r')
         for linea in archivo:
             lista = linea.split(' ')
             if len(lista) == 21:
@@ -537,34 +515,37 @@ class CargarDatosView(TemplateView):
                 cadena = cadena + lista[14][len(lista[14])-1]
                 for i in range(0, len(lista[14])-2):
                     cadena2 = cadena2 + lista[14][i]
-                #print(lista)
-                #print(cadena)
-                #print(cadena2)
-                #break
+                lista2 = [
+                    lista[0],lista[1],lista[2],lista[3],lista[4],lista[5],lista[6],lista[7],lista[8],
+                    lista[9],lista[10],lista[11],lista[12],lista[13],cadena2,cadena,lista[15],
+                    lista[16],lista[17],lista[18],lista[19],lista[20]
+                ]
                 estrella = Estrella()
-                estrella.ra = float(lista[0])
-                estrella.dec = float(lista[1])
-                estrella.era = float(lista[2])
-                estrella.edec = float(lista[3])
-                estrella.pma = float(lista[4])
-                estrella.pmd = float(lista[5])
-                estrella.epma = float(lista[6])
-                estrella.epmd = float(lista[7])
-                estrella.b = float(lista[8])
-                estrella.v = float(lista[9])
-                estrella.ibiv = int(lista[10])
-                estrella.epav = float(lista[11])
-                estrella.ep1 = float(lista[12])
-                estrella.ep2 = float(lista[13])
-                estrella.mp = int(cadena2)
-                estrella.np = int(cadena)
-                estrella.nc = int(lista[16])
-                estrella.spmid = lista[17]
-                estrella.igalicat = int(lista[18])
-                estrella.j = float(lista[19])
-                estrella.h = float(lista[20])
-                estrella.k = float(lista[21])
+                estrella.ra = float(lista2[0])
+                estrella.dec = float(lista2[1])
+                estrella.era = float(lista2[2])
+                estrella.edec = float(lista2[3])
+                estrella.pma = float(lista2[4])
+                estrella.pmd = float(lista2[5])
+                estrella.epma = float(lista2[6])
+                estrella.epmd = float(lista2[7])
+                estrella.b = float(lista2[8])
+                estrella.v = float(lista2[9])
+                estrella.ibiv = int(lista2[10])
+                estrella.epav = float(lista2[11])
+                estrella.ep1 = float(lista2[12])
+                estrella.ep2 = float(lista2[13])
+                estrella.mp = int(lista2[14])
+                estrella.np = int(lista2[15])
+                estrella.nc = int(lista2[16])
+                estrella.spmid = lista2[17]
+                estrella.igalicat = int(lista2[18])
+                estrella.j = float(lista2[19])
+                estrella.h = float(lista2[20])
+                estrella.k = float(lista2[21])
                 estrella.save()
+                cadena = ''
+                cadena2 = ''
 
             elif len(lista) == 22:
                 estrella = Estrella()
@@ -592,8 +573,20 @@ class CargarDatosView(TemplateView):
                 estrella.k = float(lista[21])
                 estrella.save()
 
-            """if c == 100000:
-                break
+            """if c >= 11151327 and c <= 11151329:
+                print(linea)
+                cadena = cadena + lista[14][len(lista[14])-2]
+                cadena = cadena + lista[14][len(lista[14])-1]
+                for i in range(0, len(lista[14])-2):
+                    cadena2 = cadena2 + lista[14][i]
+                print(lista[16])
+                print(lista[17])
+                print(lista[18])
+                cadena = ''
+                cadena2 = ''
+                #break
+            if c == 2000000:
+                print('hola')
             c = c+1"""
             #break
         context['listo'] = "Datos Cargados"
@@ -635,6 +628,57 @@ def datos_json(request):
         #c = c + 1
     return HttpResponse(json.dumps({'draw': 1,'recordsTotal': estrella.count(),'recordsFiltered': estrella.count(),'data': lista2}))
 
-class RectanguloView(FormView):
-    template_name = 'consulta.rectangulo.template.html'
-    form_class = RectanguloForm
+class RectangularView(FormView):
+    template_name = 'consulta.rectangular.html'
+    form_class = RectangularForm
+
+    def form_valid(self, form):
+        ra = float(form.cleaned_data['ra'])
+        dec = float(form.cleaned_data['dec'])
+        tamanho_rectangulo = float(form.cleaned_data['tamanho_rectangulo'])
+        estrella = Estrella.objects.all();
+
+        x1 = ra - tamanho_rectangulo
+        y1 = dec + tamanho_rectangulo
+
+        x2 = ra + tamanho_rectangulo
+        y2 = dec - tamanho_rectangulo
+
+        #{'ra': {'$gte':x1}},{'dec': {'$lte':y1}},{'ra': {'$lte':x2}},{'dec': {'$lte':y1}}
+        #{'ra': {'$gte':x1}},{'dec': {'$gte':y2}},{'ra': {'$lte':x2}},{'dec': {'$gte':y2}}
+
+        consulta = {'$and': [
+            {'ra': {'$gte':x1}},{'dec': {'$lte':y1}},{'ra': {'$lte':x2}},{'dec': {'$lte':y1}},
+            {'ra': {'$gte':x1}},{'dec': {'$gte':y2}},{'ra': {'$lte':x2}},{'dec': {'$gte':y2}}
+        ]}
+        estrella = Estrella.objects.filter(
+            __raw__= consulta
+        )
+
+        print(consulta)
+
+        print(x1)
+        print(y1)
+        print(x2)
+        print(y2)
+
+        if form.cleaned_data['opcion'] == '1':
+            return render(self.request, 'consulta.resultado.html', {'estrella': estrella.limit(5000),'r':'r'})
+        elif form.cleaned_data['opcion'] == '2':
+            response = HttpResponse(content_type='text/csv')
+            response['Content-Disposition'] = 'attachment; filename="rectangular.csv"'
+            writer = csv.writer(response,delimiter=';')
+            writer.writerow(['spmid', 'ra', 'dec', 'era','edec','pma','pmd','epma','epmd','b','v','ibiv','epav','ep1','ep2','mp','np','nc','igalicat','j','h','k'])
+            for es in estrella:
+                writer.writerow([es.spmid, es.ra, es.dec, es.era,es.edec,es.pma,es.pmd,es.epma,es.epmd,es.b,es.v,es.ibiv,es.epav,es.ep1,es.ep2,es.mp,es.np,es.nc,es.igalicat,es.j,es.h,es.k])
+            return response
+        elif form.cleaned_data['opcion'] == '3':
+            lista = []
+            for es in estrella:
+                #lista = []
+                lista.append({'spmid':es.spmid,'ra':es.ra,'era':es.era,'edec':es.edec,'pma':es.pma,'pmd':es.pmd,'epma':es.epma,'epmd':es.epmd,'b':es.b,'v':es.v,'ibiv':es.ibiv,
+                    'epav':es.epav,'ep1':es.ep1,'ep2':es.ep2,'mp':es.mp,'np':es.np,'nc':es.nc,'igalicat':es.igalicat,'j':es.j,'h':es.h,'k':es.k
+                })
+            response = HttpResponse(json.dumps(lista), content_type='application/force-download')
+            response['Content-Disposition'] = 'attachment; filename="rectangular.json"'
+            return response

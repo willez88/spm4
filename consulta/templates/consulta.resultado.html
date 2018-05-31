@@ -1,0 +1,118 @@
+{% extends 'base.template.html' %}
+{% load static %}
+{% load i18n %}
+{% block content_header_title %}{% trans 'Consulta' %}{% endblock %}
+{% block content_header_roadmap %}
+  {% if p == 'p' %}
+    <li><a href="{% url 'parametro' %}">{% trans 'Por Parámetros' %}</a></li>
+  {% elif r == 'r' %}
+    <li><a href="{% url 'rectangular' %}">{% trans 'Rectangular' %}</a></li>
+  {% endif %}
+  <li class="active">{% trans 'Resultados' %}</li>
+{% endblock %}
+{% block contenido %}
+  <div class="box box-info">
+    <div class="box-header with-border">
+      <h3 class="box-title">Resultados</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <div class="row box-body table-responsive">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <table class="table table-striped table-hover table-bordered display dataTable blue-table" id="tabla">
+            <thead>
+              <tr>
+                <th>{% trans 'SPMID' %}</th>
+                <th>{% trans 'RA' %}</th>
+                <th>{% trans 'DEC' %}</th>
+                <th>{% trans 'ERA' %}</th>
+                <th>{% trans 'EDEC' %}</th>
+                <th>{% trans 'PMA' %}</th>
+                <th>{% trans 'PMD' %}</th>
+                <th>{% trans 'EPMA' %}</th>
+                <th>{% trans 'EPMD' %}</th>
+                <th>{% trans 'B' %}</th>
+                <th>{% trans 'V' %}</th>
+                <th>{% trans 'IBIV' %}</th>
+                <th>{% trans 'EPAV' %}</th>
+                <th>{% trans 'EP1' %}</th>
+                <th>{% trans 'EP2' %}</th>
+                <th>{% trans 'MP' %}</th>
+                <th>{% trans 'NP' %}</th>
+                <th>{% trans 'NC' %}</th>
+                <th>{% trans 'IGALICAT' %}</th>
+                <th>{% trans 'J' %}</th>
+                <th>{% trans 'H' %}</th>
+                <th>{% trans 'K' %}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for es in estrella %}
+              <tr>
+                <td>{{ es.spmid }}</td>
+                <td>{{ es.ra }}</td>
+                <td>{{ es.dec }}</td>
+                <td>{{ es.era }}</td>
+                <td>{{ es.edec }}</td>
+                <td>{{ es.pma }}</td>
+                <td>{{ es.pmd }}</td>
+                <td>{{ es.epma }}</td>
+                <td>{{ es.epmd }}</td>
+                <td>{{ es.b }}</td>
+                <td>{{ es.v }}</td>
+                <td>{{ es.ibiv }}</td>
+                <td>{{ es.epav }}</td>
+                <td>{{ es.ep1 }}</td>
+                <td>{{ es.ep2 }}</td>
+                <td>{{ es.mp }}</td>
+                <td>{{ es.np }}</td>
+                <td>{{ es.nc }}</td>
+                <td>{{ es.igalicat }}</td>
+                <td>{{ es.j }}</td>
+                <td>{{ es.h }}</td>
+                <td>{{ es.k }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+{% block extra_footer %}
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var tabla= $('#tabla').DataTable({
+        "language": {
+          "sProcessing":     "Procesando...",
+          "sLengthMenu":     "Mostrar _MENU_ registros",
+          "sZeroRecords":    "No se encontraron resultados",
+          "sEmptyTable":     "Ningún dato disponible en esta tabla",
+          "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+          "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+          "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+          "sInfoPostFix":    "",
+          "sSearch":         "Buscar:",
+          "sUrl":            "",
+          "sInfoThousands":  ",",
+          "sLoadingRecords": "Cargando...",
+          "oPaginate": {
+            "sFirst":    "Primero",
+            "sLast":     "Último",
+            "sNext":     "Siguiente",
+            "sPrevious": "Anterior"
+          },
+          "oAria": {
+            "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+            "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+          },
+        },
+        //"info": false,
+        "paging": false,
+        "ordering": false,
+        "searching": false,
+      });
+    });
+  </script>
+{% endblock %}

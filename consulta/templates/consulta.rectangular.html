@@ -1,0 +1,81 @@
+{% extends 'base.template.html' %}
+{% load i18n %}
+{% block content_header_title %}{% trans 'Consulta' %}{% endblock %}
+{% block content_header_roadmap %}
+  <li class="active">{% trans 'Rectangular' %}</li>
+{% endblock %}
+{% block contenido %}
+  <div class="box box-info">
+    <div class="box-header with-border">
+      <h3 class="box-title">Rectangular</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <form role="form" class="form form-horizontal validate-form" method="post" autocomplete="off">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="form-group {% if form.ra.errors %}has-error{% endif %}">
+              <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="{{ form.ra.auto_id }}">
+                {{ form.ra.label }}
+              </label>
+              <div class="col-md-9 col-xs-9 col-sm-9">
+                <div class="form-inline">
+                  {{ form.ra }}
+                  <i class="ion ion-ios-medical item-requerido"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="form-group {% if form.dec.errors %}has-error{% endif %}">
+              <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="{{ form.dec.auto_id }}">
+                {{ form.dec.label }}
+              </label>
+              <div class="col-md-9 col-xs-9 col-sm-9">
+                <div class="form-inline">
+                  {{ form.dec }}
+                  <i class="ion ion-ios-medical item-requerido"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="form-group {% if form.tamanho_rectangulo.errors %}has-error{% endif %}">
+              <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="{{ form.tamanho_rectangulo.auto_id }}">
+                {{ form.tamanho_rectangulo.label }}
+              </label>
+              <div class="col-md-9 col-xs-9 col-sm-9">
+                <div class="form-inline">
+                  {{ form.tamanho_rectangulo }}
+                  <i class="ion ion-ios-medical item-requerido"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="form-group {% if form.opcion.errors %}has-error{% endif %}">
+              <label class="col-md-3 col-xs-3 col-sm-3 control-label" for="{{ form.opcion.auto_id }}">
+                {{ form.opcion.label }}
+              </label>
+              <div class="col-md-9 col-xs-9 col-sm-9">
+                <div class="form-inline">
+                  {{ form.opcion }}
+                  <i class="ion ion-ios-medical item-requerido"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="box-footer clearfix">
+            <button type="submit" class="btn btn-sm btn-info btn-flat pull-right">Consultar</button>
+        </div>
+
+      </Form>
+    </div>
+  </div>
+{% endblock %}

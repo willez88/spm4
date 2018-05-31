@@ -668,7 +668,7 @@ class ParametroForm(forms.Form):
         ),
     )
 
-class RectanguloForm(forms.Form):
+class RectangularForm(forms.Form):
 
     ra = forms.CharField(
         label=_("RA"),
@@ -690,12 +690,23 @@ class RectanguloForm(forms.Form):
         ),
     )
 
-    tamaho_rectangulo = forms.CharField(
+    tamanho_rectangulo = forms.CharField(
         label=_("Tamaño del Rectángulo"),
         widget=forms.NumberInput(
             attrs={
                 'class': 'form-control input-sm', 'data-toggle': 'tooltip', 'style':'width:250px;',
                 'title': _("Indique el valor del tamaño del rectángulo"), 'step': 'any',
+            }
+        ),
+    )
+
+    opcion = forms.ChoiceField(
+        label= _("Visualización"),
+        choices= OPCION,
+        widget=forms.Select(
+            attrs={
+                'class': 'form-control select2', 'data-toggle': 'tooltip', 'style':'width:250px;',
+                'title': _("Seleccione la opción para ver los resultados"),
             }
         ),
     )
